@@ -4,9 +4,9 @@ data-kt-drawer-overlay="true" data-kt-drawer-width="225px" data-kt-drawer-direct
 data-kt-drawer-toggle="#kt_app_sidebar_mobile_toggle">
 <div class="app-sidebar-logo px-6" id="kt_app_sidebar_logo">
     <a href="index.html">
-        <img alt="Logo" src="assets/media/logos/default-dark.svg"
+        <img alt="Logo" src="{{asset('assets/media/logos/default-dark.svg')}}"
             class="h-25px app-sidebar-logo-default" />
-        <img alt="Logo" src="assets/media/logos/default-small.svg"
+        <img alt="Logo" src="{{asset('assets/media/logos/default-small.svg')}}"
             class="h-20px app-sidebar-logo-minimize" />
     </a>
     <div id="kt_app_sidebar_toggle"
@@ -31,7 +31,7 @@ data-kt-drawer-toggle="#kt_app_sidebar_mobile_toggle">
                 id="#kt_app_sidebar_menu" data-kt-menu="true" data-kt-menu-expand="false">
 
                 <div class="menu-item show">
-                    <a class="menu-link" href="apps/calendar.html">
+                    <a class="menu-link" href="{{ route('admin.dashboard')}}">
                         <span class="menu-icon">
                             <i class="ki-duotone ki-element-11 fs-2">
                                 <span class="path1"></span>
@@ -43,7 +43,19 @@ data-kt-drawer-toggle="#kt_app_sidebar_mobile_toggle">
                         <span class="menu-title">Dashboards</span>
                     </a>
                 </div>
-
+                <div class="menu-item">
+                    <a class="menu-link"  href="{{ route('admin.users.listUsers')}}">
+                        <span class="menu-icon">
+                            <i class="ki-duotone ki-element-11 fs-2">
+                                <span class="path1"></span>
+                                <span class="path2"></span>
+                                <span class="path3"></span>
+                                <span class="path4"></span>
+                            </i>
+                        </span>
+                        <span class="menu-title">Quản lý người dùng</span>
+                    </a>
+                </div>
 
                 <div data-kt-menu-trigger="click" class="menu-item menu-accordion">
                     <span class="menu-link">
@@ -54,44 +66,69 @@ data-kt-drawer-toggle="#kt_app_sidebar_mobile_toggle">
                                 <span class="path3"></span>
                             </i>
                         </span>
-                        <span class="menu-title">Cung cấp số liệu</span>
+                        <span class="menu-title">Quản lý Danh Mục</span>
                         <span class="menu-arrow"></span>
                     </span>
                     <div class="menu-sub menu-sub-accordion">
                         <div class="menu-item">
-                            <a class="menu-link" href="pages/user-profile/overview.html">
+                            <a class="menu-link" href="{{ route('admin.categories.listCategories')}}">
                                 <span class="menu-bullet">
                                     <span class="bullet bullet-dot"></span>
                                 </span>
-                                <span class="menu-title">Tổ chức quản trị</span>
+                                <span class="menu-title">Danh Sách Danh Mục</span>
                             </a>
                         </div>
                         <div class="menu-item">
-                            <a class="menu-link" href="pages/user-profile/projects.html">
+                            <a class="menu-link" href="{{ route('admin.categories.addCategory')}}">
                                 <span class="menu-bullet">
                                     <span class="bullet bullet-dot"></span>
                                 </span>
-                                <span class="menu-title">Giảng viên</span>
+                                <span class="menu-title">Thêm Danh Mục</span>
                             </a>
                         </div>
-                        <div class="menu-item">
+                        {{-- <div class="menu-item">
                             <a class="menu-link" href="pages/user-profile/campaigns.html">
                                 <span class="menu-bullet">
                                     <span class="bullet bullet-dot"></span>
                                 </span>
-                                <span class="menu-title">Cơ sở vật chất</span>
+                                <span class="menu-title">Chỉnh Sửa Danh Mục</span>
                             </a>
-                        </div>
+                        </div> --}}
+                        
+                    </div>
+                </div>
+                <div data-kt-menu-trigger="click" class="menu-item menu-accordion">
+                    <span class="menu-link">
+                        <span class="menu-icon">
+                            <i class="ki-duotone ki-address-book fs-2">
+                                <span class="path1"></span>
+                                <span class="path2"></span>
+                                <span class="path3"></span>
+                            </i>
+                        </span>
+                        <span class="menu-title">Quản lý sản phẩm </span>
+                        <span class="menu-arrow"></span>
+                    </span>
+                    <div class="menu-sub menu-sub-accordion">
                         <div class="menu-item">
-                            <a class="menu-link" href="pages/user-profile/documents.html">
+                            <a class="menu-link"  href="{{ route('admin.products.listProducts')}}">
                                 <span class="menu-bullet">
                                     <span class="bullet bullet-dot"></span>
                                 </span>
-                                <span class="menu-title">Tài chính</span>
+                                <span class="menu-title">Danh sách sản phẩm</span>
                             </a>
                         </div>
+                        <div class="menu-item">
+                            <a class="menu-link"  href="{{ route('admin.products.addProduct')}}">
+                                <span class="menu-bullet">
+                                    <span class="bullet bullet-dot"></span>
+                                </span>
+                                <span class="menu-title">Thêm sản phẩm</span>
+                            </a>
+                        </div>
+                       
                     </div>
-                </div>
+                </div>  
             </div>
         </div>
     </div>

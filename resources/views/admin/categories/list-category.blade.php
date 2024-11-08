@@ -2,7 +2,7 @@
 
 @section('title')
 @parent 
-Danh Sách Product
+Danh Sách Category
 @endsection
 
 @push('style')
@@ -30,10 +30,10 @@ Danh Sách Product
                     <div class="d-flex justify-content-between mb-10 w-100">
                         <h3 class="card-title align-items-start flex-column">
                             <span class="card-label fw-bold text-gray-800">
-                               Danh Sách San Pham
+                               Danh Sách Danh Mục
                             </span>
                         </h3>
-                        <a href="{{ route('admin.products.updatePatchProduct')}}" class="btn btn-sm fw-bold btn-primary" >Thêm mới </a>
+                        <a href="{{ route('admin.categories.addCategory')}}" class="btn btn-sm fw-bold btn-primary" >Thêm mới </a>
                     </div>
                 </div>
 
@@ -46,31 +46,20 @@ Danh Sách Product
                                         <tr class="fs-7 fw-bold text-gray-500 border-bottom-0">
                                             <th class="p-0 pb-3 min-w-100px ">STT</th>
                                             <th class="p-0 pb-3 min-w-100px  pe-13">NAME</th>
-                                            <th class="p-0 pb-3 min-w-100px  pe-13">PRICE</th>
-                                            <th class="p-0 pb-3 min-w-100px  pe-13">CATEGOIES</th>
-                                            <th class="p-0 pb-3 min-w-100px  pe-13">IMAGE</th>
                                             <th class="p-0 pb-3 w-100px ">ACTIONS</th>
                                         </tr>
                                     </thead>
                                     <tbody>
-                                        @foreach( $products as $key => $value)
+                                        @foreach( $listcategory as $key => $value)
                                             <tr>
                                                 <td>{{ $key + 1 }}</td>
                                                 <td>{{ $value->name }}</td>
-                                                <td>{{ $value->price }}</td>
-                                                <td>{{ $value->category->name }}</td>
+                                               
                                                 <td>
-                                                    <div class="d-flex align-items-center">
-                                                        @foreach($value->images->take(3) as $image)
-                                                            <img src="{{ asset($image->image_url) }}" alt="" class="img-thumbnail me-2" style="width: 50px; height: 50px; object-fit: cover;">
-                                                        @endforeach
-                                                    </div>
-                                                </td>                                                                                             
-                                                <td>
-                                                    <a href="{{route('admin.products.updateProduct', $value->id)}}" >
+                                                    <a href="{{route('admin.categories.updateCategory', $value->id)}}" >
                                                         <i class="fas fa-pencil-alt fs-4"></i>
                                                     </a>
-                                                    <a href="#" data-id="{{ $value->id }},{{ $value->name }}" class="ms-3" data-bs-toggle="modal" data-bs-target="#modeDelete">
+                                                    <a href="#" data-id="{{ $value->id }}" class="ms-3" data-bs-toggle="modal" data-bs-target="#modeDelete">
                                                         <i class="fa-solid fa-trash text-danger fs-4"></i>
                                                     </a>
                                                 </td>
@@ -89,6 +78,7 @@ Danh Sách Product
 
 
 <!-- Delete Modal -->
+
 <div class="modal fade" id="modeDelete" tabindex="-1" aria-labelledby="modeDeleteLabel" aria-hidden="true">
     <div class="modal-dialog">
         <div class="modal-content">
@@ -97,13 +87,13 @@ Danh Sách Product
                 <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
             </div>
             <div class="modal-body">
-                <p id="confirmMessage">Bạn có chắc chắn muốn xóa người dùng này không?</p>
+                <p id="confirmMessage">Bạn có chắc chắn muốn xóa danh mục này không?</p>
             </div>
             <div class="modal-footer">
                 <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Hủy</button>
                 <form id="deleteUserForm" method="POST">
                     @csrf
-                    @method('DELETE')
+                    @method('DELETE') <!-- Sử dụng phương thức DELETE -->
                     <button type="submit" class="btn btn-danger">Xóa</button>
                 </form>
             </div>
@@ -114,26 +104,44 @@ Danh Sách Product
 
 
 
+
+
 @endsection
 
 @push('script')
 <script>
+    // var modeDelete = document.getElementById('modeDelete');
+
+    // modeDelete.addEventListener('show.bs.modal', function (event) {
+    //     var button = event.relatedTarget;
+    //     var dataIdCategory = button.getAttribute('data-id');
+
+    //     // var dataParts = dataIdCategory.split(',');
+    //     // var categoryId = dataParts[0];
+    //     // var categoryName = dataParts[1];
+
+    //     // var confirmMessage = document.getElementById('confirmMessage');
+    //     // confirmMessage.textContent = `Bạn có chắc chắn muốn xóa danh mục ${categoryName} không?`;
+
+    //     var confirmDelete = document.querySelector('#deleteUserForm');
+    //     confirmDelete.setAttribute('action', '{{ route("admin.categories.deleteCategory", "") }}/' + dataIdCategory);
+       
+    // });
+
+    
     var modeDelete = document.getElementById('modeDelete');
 
     modeDelete.addEventListener('show.bs.modal', function (event) {
-        var button = event.relatedTarget;
-        var dataIdProduct = button.getAttribute('data-id');
-
-        var dataParts = dataIdProduct.split(',');
-        var productId = dataParts[0];
-        var productName = dataParts[1];
-
-        var confirmMessage = document.getElementById('confirmMessage');
-        confirmMessage.textContent = `Bạn có chắc chắn muốn xóa danh mục ${productName} không?`;
+        var button = event.relatedTarget; // lấy button vừa được click
+        var dataIdCategory = button.getAttribute('data-id'); // lấy ID danh mục từ data-id
 
         var confirmDelete = document.querySelector('#deleteUserForm');
-        confirmDelete.setAttribute('action', '{{ route("admin.products.deleteProduct", "") }}/' + productId);
+        // Cập nhật action của form với đường dẫn xóa danh mục đúng
+        confirmDelete.setAttribute('action', '{{ route("admin.categories.deleteCategory", "") }}/' + dataIdCategory);
     });
+
+
 </script>
 @endpush
 
+    

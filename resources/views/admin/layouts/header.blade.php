@@ -14,7 +14,7 @@ data-kt-sticky-offset="{default: '200px', lg: '0'}" data-kt-sticky-animation="fa
     </div>
     <div class="d-flex align-items-center flex-grow-1 flex-lg-grow-0">
         <a href="index.html" class="d-lg-none">
-            <img alt="Logo" src="assets/media/logos/default-small.svg" class="h-30px" />
+            <img alt="Logo" src="{{ asset('assets/media/logos/default-small.svg')}}" class="h-30px" />
         </a>
     </div>
 
@@ -118,7 +118,7 @@ data-kt-sticky-offset="{default: '200px', lg: '0'}" data-kt-sticky-animation="fa
                 <div class="menu menu-sub menu-sub-dropdown menu-column w-350px w-lg-375px"
                     data-kt-menu="true" id="kt_menu_notifications">
                     <div class="d-flex flex-column bgi-no-repeat rounded-top" style="
-        background-image: url('assets/media/misc/menu-header-bg.jpg');
+        background-image: url({{'assets/media/misc/menu-header-bg.jpg'}});
       ">
                         <h3 class="text-white fw-semibold px-9 mt-10 mb-6">
                             Thông báo
@@ -230,7 +230,7 @@ data-kt-sticky-offset="{default: '200px', lg: '0'}" data-kt-sticky-animation="fa
                 <div class="cursor-pointer symbol symbol-35px"
                     data-kt-menu-trigger="{default: 'click', lg: 'hover'}" data-kt-menu-attach="parent"
                     data-kt-menu-placement="bottom-end">
-                    <img src="assets/media/avatars/300-3.jpg" class="rounded-3" alt="user" />
+                    <img src="{{asset('assets/media/avatars/300-3.jpg')}}" class="rounded-3" alt="user" />
                 </div>
                 <div class="menu menu-sub menu-sub-dropdown menu-column menu-rounded menu-gray-800 menu-state-bg menu-state-color fw-semibold py-4 fs-6 w-275px"
                     data-kt-menu="true">
@@ -257,26 +257,26 @@ data-kt-sticky-offset="{default: '200px', lg: '0'}" data-kt-sticky-animation="fa
                                     class="fs-8 rounded bg-light px-3 py-2 position-absolute translate-middle-y top-50 end-0">Việt
                                     Nam
                                     <img class="w-15px h-15px rounded-1 ms-2"
-                                        src="assets/media/flags/vietnam.svg" alt="" /></span></span>
+                                        src="{{ asset('assets/media/flags/vietnam.svg')}}" alt="" /></span></span>
                         </a>
                         <div class="menu-sub menu-sub-dropdown w-175px py-4">
                             <div class="menu-item px-3">
                                 <a href="account/settings.html" class="menu-link d-flex px-5 active">
                                     <span class="symbol symbol-20px me-4">
-                                        <img class="rounded-1" src="assets/media/flags/vietnam.svg"
+                                        <img class="rounded-1" src="{{asset('assets/media/flags/vietnam.svg')}}"
                                             alt="" /> </span>Việt Nam</a>
                             </div>
                             <div class="menu-item px-3">
                                 <a href="account/settings.html" class="menu-link d-flex px-5">
                                     <span class="symbol symbol-20px me-4">
                                         <img class="rounded-1"
-                                            src="assets/media/flags/united-states.svg" alt="" />
+                                            src="{{asset('assets/media/flags/united-states.svg')}}" alt="" />
                                     </span>English</a>
                             </div>
                         </div>
                     </div>
                     <div class="menu-item px-5">
-                        <a href="authentication/layouts/corporate/sign-in.html"
+                        <a href="{{route('logout')}}"
                             class="menu-link px-5">Sign Out</a>
                     </div>
                 </div>
