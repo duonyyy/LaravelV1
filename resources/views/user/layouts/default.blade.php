@@ -18,7 +18,7 @@
 		<!-- Banner -->
 		<div class="mb-0" id="home">
 			<div class="bgi-no-repeat bgi-size-contain bgi-position-x-center bgi-position-y-bottom landing-dark-bg"
-				style="background-image: url(assets/media/svg/illustrations/landing.svg)">
+			style="background-image: url({{'assets/media/svg/illustrations/landing.svg'}})">
 
 				<!-- Header -->
 				@include('user.layouts.header')
@@ -39,31 +39,31 @@
 					</div>
 					<div class="d-flex flex-center flex-wrap position-relative px-5">
 						<div class="d-flex flex-center m-3 m-md-6" data-bs-toggle="tooltip" title="Fujifilm">
-							<img src="assets/media/svg/brand-logos/fujifilm.svg" class="mh-30px mh-lg-40px" alt="" />
+							<img src="{{asset('assets/media/svg/brand-logos/fujifilm.svg')}}" class="mh-30px mh-lg-40px" alt="Fujifilm" />
 						</div>
 						<div class="d-flex flex-center m-3 m-md-6" data-bs-toggle="tooltip" title="Vodafone">
-							<img src="assets/media/svg/brand-logos/vodafone.svg" class="mh-30px mh-lg-40px" alt="" />
+							<img src="{{asset('assets/media/svg/brand-logos/vodafone.svg')}}" class="mh-30px mh-lg-40px" alt="Vodafone" />
 						</div>
 						<div class="d-flex flex-center m-3 m-md-6" data-bs-toggle="tooltip" title="KPMG International">
-							<img src="assets/media/svg/brand-logos/kpmg.svg" class="mh-30px mh-lg-40px" alt="" />
+							<img src="{{asset('assets/media/svg/brand-logos/kpmg.svg')}}" class="mh-30px mh-lg-40px" alt="KPMG International" />
 						</div>
-						<div class="d-flex flex-center m-3 m-md-6" data-bs-toggle="tooltip" title="Nasa">
-							<img src="assets/media/svg/brand-logos/nasa.svg" class="mh-30px mh-lg-40px" alt="" />
+						<div class="d-flex flex-center m-3 m-md-6" data-bs-toggle="tooltip" title="NASA">
+							<img src="{{asset('assets/media/svg/brand-logos/nasa.svg')}}" class="mh-30px mh-lg-40px" alt="NASA" />
 						</div>
 						<div class="d-flex flex-center m-3 m-md-6" data-bs-toggle="tooltip" title="Aspnetzero">
-							<img src="assets/media/svg/brand-logos/aspnetzero.svg" class="mh-30px mh-lg-40px" alt="" />
+							<img src="{{asset('assets/media/svg/brand-logos/aspnetzero.svg')}}" class="mh-30px mh-lg-40px" alt="Aspnetzero" />
 						</div>
-						<div class="d-flex flex-center m-3 m-md-6" data-bs-toggle="tooltip"
-							title="AON - Empower Results">
-							<img src="assets/media/svg/brand-logos/aon.svg" class="mh-30px mh-lg-40px" alt="" />
+						<div class="d-flex flex-center m-3 m-md-6" data-bs-toggle="tooltip" title="AON - Empower Results">
+							<img src="{{asset('assets/media/svg/brand-logos/aon.svg')}}" class="mh-30px mh-lg-40px" alt="AON - Empower Results" />
 						</div>
 						<div class="d-flex flex-center m-3 m-md-6" data-bs-toggle="tooltip" title="Hewlett-Packard">
-							<img src="assets/media/svg/brand-logos/hp-3.svg" class="mh-30px mh-lg-40px" alt="" />
+							<img src="{{asset('assets/media/svg/brand-logos/hp-3.svg')}}" class="mh-30px mh-lg-40px" alt="Hewlett-Packard" />
 						</div>
 						<div class="d-flex flex-center m-3 m-md-6" data-bs-toggle="tooltip" title="Truman">
-							<img src="assets/media/svg/brand-logos/truman.svg" class="mh-30px mh-lg-40px" alt="" />
+							<img src="{{asset('assets/media/svg/brand-logos/truman.svg')}}" class="mh-30px mh-lg-40px" alt="Truman" />
 						</div>
 					</div>
+					
 				</div>
 				<!--end::Landing hero-->
 			</div>
@@ -85,161 +85,60 @@
 		<div class="mb-n10 mb-lg-n20 z-index-2">
 			<div class="container mb-10">
 				<div class="text-center mb-17">
-					<h3 class="fs-2hx text-gray-900 mb-5" id="how-it-works"
-						data-kt-scroll-offset="{default: 100, lg: 150}">How it Works</h3>
-					<div class="fs-5 text-muted fw-bold">Save thousands to millions of bucks by using single tool
-						<br />for different amazing and great useful admin
+					<h3 class="fs-2hx text-gray-900 mb-5" id="how-it-works" data-kt-scroll-offset="{default: 100, lg: 150}">
+						How it Works
+					</h3>
+					<div class="fs-5 text-muted fw-bold">
+						Save thousands to millions of bucks by using a single tool for different amazing and great useful admin
+						<br />functions.
 					</div>
 				</div>
 				<div class="row w-100 gy-10 mb-md-20">
-					<div class="col-md-4 px-5">
-						<div class="text-center mb-10 mb-md-0">
-							<img src="assets/media/illustrations/sketchy-1/2.png" class="mh-125px mb-9" alt="" />
-							<div class="d-flex flex-center mb-5">
-								<span class="badge badge-circle badge-light-success fw-bold p-5 me-3 fs-3">1</span>
-								<div class="fs-5 fs-lg-3 fw-bold text-gray-900">Jane Miller</div>
-							</div>
-							<div class="fw-semibold fs-6 fs-lg-4 text-muted">Save thousands to millions of bucks
-								<br />by using single tool for different
-								<br />amazing and great
-							</div>
-						</div>
-					</div>
-					<div class="col-md-4 px-5">
-						<div class="text-center mb-10 mb-md-0">
-							<img src="assets/media/illustrations/sketchy-1/8.png" class="mh-125px mb-9" alt="" />
-							<div class="d-flex flex-center mb-5">
-								<span class="badge badge-circle badge-light-success fw-bold p-5 me-3 fs-3">2</span>
-								<div class="fs-5 fs-lg-3 fw-bold text-gray-900">Setup Your App</div>
-							</div>
-							<div class="fw-semibold fs-6 fs-lg-4 text-muted">Save thousands to millions of bucks
-								<br />by using single tool for different
-								<br />amazing and great
+					@foreach($products as $value)
+						<div class="col-md-4 px-5">
+							<div class="text-center mb-10 mb-md-0">
+								<a href="{{ route('users.detailProduct', ['id' => $value->id]) }}" class="text-decoration-none">
+									@if($value->images->isNotEmpty())
+										<img src="{{ asset($value->images->first()->image_url) }}" class="mh-125px mb-9" alt="{{ $value->name }}" />
+									@else
+										<img src="{{ asset('path/to/default-image.jpg') }}" class="mh-125px mb-9" alt="No Image Available" />
+									@endif
+									<div class="d-flex flex-center mb-5">
+										<div class="fs-5 fs-lg-3 fw-bold text-gray-900">{{ $value->name }}</div>
+									</div>
+									<div class="fw-semibold fs-6 fs-lg-4 text-muted">
+										{{ $value->price }}
+									</div>
+								</a>
 							</div>
 						</div>
-					</div>
-					<div class="col-md-4 px-5">
-						<div class="text-center mb-10 mb-md-0">
-							<img src="assets/media/illustrations/sketchy-1/12.png" class="mh-125px mb-9" alt="" />
-							<div class="d-flex flex-center mb-5">
-								<span class="badge badge-circle badge-light-success fw-bold p-5 me-3 fs-3">3</span>
-								<div class="fs-5 fs-lg-3 fw-bold text-gray-900">Enjoy Nautica App</div>
-							</div>
-							<div class="fw-semibold fs-6 fs-lg-4 text-muted">Save thousands to millions of bucks
-								<br />by using single tool for different
-								<br />amazing and great
-							</div>
-						</div>
-					</div>
+					@endforeach
+
+
 				</div>
 			</div>
 		</div>
+		
+		
+		
 		<!--end::How It Works Section-->
 
 
 
 
 		<!--begin::Statistics Section-->
-		<div class="mt-10">
-			<div class="landing-curve landing-dark-color">
-				<svg viewBox="15 -1 1470 48" fill="none" xmlns="http://www.w3.org/2000/svg">
-					<path
-						d="M1 48C4.93573 47.6644 8.85984 47.3311 12.7725 47H1489.16C1493.1 47.3311 1497.04 47.6644 1501 48V47H1489.16C914.668 -1.34764 587.282 -1.61174 12.7725 47H1V48Z"
-						fill="currentColor"></path>
-				</svg>
-			</div>
-			<div class="pb-15 pt-18 landing-dark-bg">
-				<div class="container">
-					<div class="text-center mt-15 mb-18" id="achievements"
-						data-kt-scroll-offset="{default: 100, lg: 150}">
-						<h3 class="fs-2hx text-white fw-bold mb-5">We Make Things Better</h3>
-						<div class="fs-5 text-gray-700 fw-bold">Save thousands to millions of bucks by using single tool
-							<br />for different amazing and great useful admin
-						</div>
-					</div>
-					<div class="d-flex flex-center">
-						<div class="d-flex flex-wrap flex-center justify-content-lg-between mb-15 mx-auto w-xl-900px">
-							<div class="d-flex flex-column flex-center h-200px w-200px h-lg-250px w-lg-250px m-3 bgi-no-repeat bgi-position-center bgi-size-contain"
-								style="background-image: url('assets/media/svg/misc/octagon.svg')">
-								<i class="ki-duotone ki-element-11 fs-2tx text-white mb-3">
-									<span class="path1"></span>
-									<span class="path2"></span>
-									<span class="path3"></span>
-									<span class="path4"></span>
-								</i>
-								<div class="mb-0">
-									<div class="fs-lg-2hx fs-2x fw-bold text-white d-flex flex-center">
-										<div class="min-w-70px" data-kt-countup="true" data-kt-countup-value="700"
-											data-kt-countup-suffix="+">0</div>
-									</div>
-									<span class="text-gray-600 fw-semibold fs-5 lh-0">Known Companies</span>
-								</div>
-							</div>
-							<div class="d-flex flex-column flex-center h-200px w-200px h-lg-250px w-lg-250px m-3 bgi-no-repeat bgi-position-center bgi-size-contain"
-								style="background-image: url('assets/media/svg/misc/octagon.svg')">
-								<i class="ki-duotone ki-chart-pie-4 fs-2tx text-white mb-3">
-									<span class="path1"></span>
-									<span class="path2"></span>
-									<span class="path3"></span>
-								</i>
-								<div class="mb-0">
-									<div class="fs-lg-2hx fs-2x fw-bold text-white d-flex flex-center">
-										<div class="min-w-70px" data-kt-countup="true" data-kt-countup-value="80"
-											data-kt-countup-suffix="K+">0</div>
-									</div>
-									<span class="text-gray-600 fw-semibold fs-5 lh-0">Statistic Reports</span>
-								</div>
-							</div>
-							<div class="d-flex flex-column flex-center h-200px w-200px h-lg-250px w-lg-250px m-3 bgi-no-repeat bgi-position-center bgi-size-contain"
-								style="background-image: url('assets/media/svg/misc/octagon.svg')">
-								<i class="ki-duotone ki-basket fs-2tx text-white mb-3">
-									<span class="path1"></span>
-									<span class="path2"></span>
-									<span class="path3"></span>
-									<span class="path4"></span>
-								</i>
-								<div class="mb-0">
-									<div class="fs-lg-2hx fs-2x fw-bold text-white d-flex flex-center">
-										<div class="min-w-70px" data-kt-countup="true" data-kt-countup-value="35"
-											data-kt-countup-suffix="M+">0</div>
-									</div>
-									<span class="text-gray-600 fw-semibold fs-5 lh-0">Secure Payments</span>
-								</div>
-							</div>
-						</div>
-					</div>
-					<div class="fs-2 fw-semibold text-muted text-center mb-3">
-						<span class="fs-1 lh-1 text-gray-700">“</span>When you care about your topic, you’ll write about
-						it in a
-						<br />
-						<span class="text-gray-700 me-1">more powerful</span>, emotionally expressive way
-						<span class="fs-1 lh-1 text-gray-700">“</span>
-					</div>
-					<div class="fs-2 fw-semibold text-muted text-center">
-						<a href="account/security.html" class="link-primary fs-4 fw-bold">Marcus Levy,</a>
-						<span class="fs-4 fw-bold text-gray-600">KeenThemes CEO</span>
-					</div>
-				</div>
-			</div>
-			<div class="landing-curve landing-dark-color">
-				<svg viewBox="15 12 1470 48" fill="none" xmlns="http://www.w3.org/2000/svg">
-					<path
-						d="M0 11C3.93573 11.3356 7.85984 11.6689 11.7725 12H1488.16C1492.1 11.6689 1496.04 11.3356 1500 11V12H1488.16C913.668 60.3476 586.282 60.6117 11.7725 12H0V11Z"
-						fill="currentColor"></path>
-				</svg>
-			</div>
-		</div>
+
+
 		<!--end::Statistics Section-->
 
 
 		<!--begin::Team Section-->
-		<div class="py-10 py-lg-20">
+		{{-- <div class="py-10 py-lg-20">
 			<div class="container">
 				<div class="text-center mb-12">
-					<h3 class="fs-2hx text-gray-900 mb-5" id="team" data-kt-scroll-offset="{default: 100, lg: 150}">Our
-						Great Team</h3>
-					<div class="fs-5 text-muted fw-bold">It’s no doubt that when a development takes longer to complete,
-						additional costs to
+					<h3 class="fs-2hx text-gray-900 mb-5" id="team" data-kt-scroll-offset="{default: 100, lg: 150}">Our Great Team</h3>
+					<div class="fs-5 text-muted fw-bold">
+						It’s no doubt that when a development takes longer to complete, additional costs to
 						<br />integrate and test each extra feature creeps up and haunts most of us.
 					</div>
 				</div>
@@ -251,7 +150,7 @@
 						data-tns-responsive="{1200: {items: 3}, 992: {items: 2}}">
 						<div class="text-center">
 							<div class="octagon mx-auto mb-5 d-flex w-200px h-200px bgi-no-repeat bgi-size-contain bgi-position-center"
-								style="background-image:url('assets/media/avatars/300-1.jpg')"></div>
+								style="background-image:url('{{ 'assets/media/avatars/300-1.jpg'}}')"></div>
 							<div class="mb-0">
 								<a href="#" class="text-gray-900 fw-bold text-hover-primary fs-3">Paul Miles</a>
 								<div class="text-muted fs-6 fw-semibold mt-1">Development Lead</div>
@@ -259,7 +158,7 @@
 						</div>
 						<div class="text-center">
 							<div class="octagon mx-auto mb-5 d-flex w-200px h-200px bgi-no-repeat bgi-size-contain bgi-position-center"
-								style="background-image:url('assets/media/avatars/300-2.jpg')"></div>
+								style="background-image:url('{{ asset('assets/media/avatars/300-2.jpg') }}')"></div>
 							<div class="mb-0">
 								<a href="#" class="text-gray-900 fw-bold text-hover-primary fs-3">Melisa Marcus</a>
 								<div class="text-muted fs-6 fw-semibold mt-1">Creative Director</div>
@@ -267,7 +166,7 @@
 						</div>
 						<div class="text-center">
 							<div class="octagon mx-auto mb-5 d-flex w-200px h-200px bgi-no-repeat bgi-size-contain bgi-position-center"
-								style="background-image:url('assets/media/avatars/300-5.jpg')"></div>
+								style="background-image:url('{{ asset('assets/media/avatars/300-5.jpg') }}')"></div>
 							<div class="mb-0">
 								<a href="#" class="text-gray-900 fw-bold text-hover-primary fs-3">David Nilson</a>
 								<div class="text-muted fs-6 fw-semibold mt-1">Python Expert</div>
@@ -275,7 +174,7 @@
 						</div>
 						<div class="text-center">
 							<div class="octagon mx-auto mb-5 d-flex w-200px h-200px bgi-no-repeat bgi-size-contain bgi-position-center"
-								style="background-image:url('assets/media/avatars/300-20.jpg')"></div>
+								style="background-image:url('{{ asset('assets/media/avatars/300-20.jpg') }}')"></div>
 							<div class="mb-0">
 								<a href="#" class="text-gray-900 fw-bold text-hover-primary fs-3">Anne Clarc</a>
 								<div class="text-muted fs-6 fw-semibold mt-1">Project Manager</div>
@@ -283,7 +182,7 @@
 						</div>
 						<div class="text-center">
 							<div class="octagon mx-auto mb-5 d-flex w-200px h-200px bgi-no-repeat bgi-size-contain bgi-position-center"
-								style="background-image:url('assets/media/avatars/300-23.jpg')"></div>
+								style="background-image:url('{{ asset('assets/media/avatars/300-23.jpg') }}')"></div>
 							<div class="mb-0">
 								<a href="#" class="text-gray-900 fw-bold text-hover-primary fs-3">Ricky Hunt</a>
 								<div class="text-muted fs-6 fw-semibold mt-1">Art Director</div>
@@ -291,7 +190,7 @@
 						</div>
 						<div class="text-center">
 							<div class="octagon mx-auto mb-5 d-flex w-200px h-200px bgi-no-repeat bgi-size-contain bgi-position-center"
-								style="background-image:url('assets/media/avatars/300-12.jpg')"></div>
+								style="background-image:url('{{ asset('assets/media/avatars/300-12.jpg') }}')"></div>
 							<div class="mb-0">
 								<a href="#" class="text-gray-900 fw-bold text-hover-primary fs-3">Alice Wayde</a>
 								<div class="text-muted fs-6 fw-semibold mt-1">Marketing Manager</div>
@@ -299,7 +198,7 @@
 						</div>
 						<div class="text-center">
 							<div class="octagon mx-auto mb-5 d-flex w-200px h-200px bgi-no-repeat bgi-size-contain bgi-position-center"
-								style="background-image:url('assets/media/avatars/300-9.jpg')"></div>
+								style="background-image:url('{{ asset('assets/media/avatars/300-9.jpg') }}')"></div>
 							<div class="mb-0">
 								<a href="#" class="text-gray-900 fw-bold text-hover-primary fs-3">Carles Puyol</a>
 								<div class="text-muted fs-6 fw-semibold mt-1">QA Managers</div>
@@ -315,6 +214,7 @@
 				</div>
 			</div>
 		</div>
+		
 		<!--end::Team Section-->
 
 
@@ -781,8 +681,12 @@
 				</div>
 			</div>
 		</div>
-		<!--end::Testimonials Section-->
+		<!--end::Testimonials Section--> --}}
 
+
+
+
+		
 		<!--begin::Footer Section-->
 		@include('user.layouts.footer')
 		<!--end::Footer Section-->

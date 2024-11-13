@@ -39,7 +39,7 @@ class AuthenController extends Controller
             'email' => $request->email,
             'password' => $request->password,
         ])) {
-            return redirect()->route('admin.users.listUsers');
+            return redirect()->route('admin.dashboard');
         }else{
             return redirect()->back()->with([
                 'messageError' => 'Email or password khong dung'

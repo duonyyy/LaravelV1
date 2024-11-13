@@ -5,6 +5,7 @@ use App\Http\Controllers\Admin\UserController;
 use App\Http\Controllers\Admin\CategoryController;
 use App\Http\Controllers\Admin\ProductController;
 use App\Http\Controllers\AuthenController;
+use App\Http\Controllers\User\HomeController;
 
 Route::group([
     'prefix' => 'admin',
@@ -62,12 +63,20 @@ Route::get('logout', [AuthenController::class, 'logout'])->name('logout');
 
 
 
+
+
+
 Route::group([
     'prefix' => 'users',     
     'as' => 'users.',       
 ], function () {
 
     // Route cho trang 'home' của người dùng
-    Route::get('home', [AuthenController::class, 'home'])->name('home');
+    Route::get('home', [HomeController::class, 'home'])->name('home');
+    Route::get('detail-product/{id}', [HomeController::class, 'detailProduct'])->name('detailProduct');
+
 });
 
+Route::get('/', function(){
+    return redirect()->route('users.home');
+});
