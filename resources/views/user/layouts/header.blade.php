@@ -57,9 +57,20 @@
 								</div>
 							</div>
 							<div class="flex-equal text-end ms-1">
-								<a href="authentication/layouts/corporate/sign-in.html" class="btn btn-success">Sign
-									In</a>
+								@auth
+									<!-- If the user is authenticated, display their name -->
+									<span class="text-danger">{{ auth()->user()->name }}</span>
+									<div class="menu-item px-5">
+										<a href="{{route('logout')}}"
+											class="menu-link px-5">Sign Out</a>
+									</div>
+
+								@else
+									<!-- If the user is not authenticated, show the Sign In button -->
+									<a href="{{ route('login') }}" class="btn btn-success">Sign In</a>
+								@endauth
 							</div>
+							
 						</div>
 					</div>
 				</div>

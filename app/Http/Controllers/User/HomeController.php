@@ -29,7 +29,7 @@ class HomeController extends Controller
         $categories = Category::get();
     
         // Trả về view với dữ liệu sản phẩm và danh mục
-        return view('user.layouts.detail')->with([
+        return view('user.detail')->with([
             'product' => $product,
             'categories' => $categories
         ]); // Load product with images and category

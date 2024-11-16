@@ -25,9 +25,12 @@ class ProductController extends Controller
 
     public function addProduct()
     {
+        $products = Product::with('images:id,product_id,image_url')  // Quan hệ với bảng images
+        ->get(); 
         $categories = Category::get();
         return view('admin.products.add-product')->with([
-            'categories' => $categories
+            'categories' => $categories,
+            'products' => $products
         ]);
     }
 

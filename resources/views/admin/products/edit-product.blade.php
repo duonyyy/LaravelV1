@@ -44,6 +44,14 @@
             @enderror
         </div>
 
+        <div class="mb-3">
+          
+            @foreach($product->images as $image)
+                <img src="{{ asset($image->image_url) }}" alt="Product Image" style="width: 50px; height: 50px; object-fit: cover;">
+            @endforeach
+                                            
+        </div>
+        
         <!-- Product Name -->
         <div class="mb-3">
             <label for="name" class="form-label">Tên Sản Phẩm</label>

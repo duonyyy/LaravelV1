@@ -21,31 +21,29 @@ class AuthenController extends Controller
         return view('user.home');
     }
 
-    public function postlogin(Request $request)
-    {
-        $request->validate(
-            [
-                'email' => ['required', 'email'],
-                'password' => ['required']
-            ],
-            [
-                'email.required' => ' Email khong duoc de trong',
-                'email.email' => 'Email khong dung dinh dang',
-                'password.required' => ' Password khong duoc de trong',
-            ]
-        );
+    public function postLogin(Request $request)
+{
+    $request->validate(
+        [
+            'email' => ['required', 'email'],
+            'password' => ['required']
+        ],
+        [
+            'email.required' => 'Email không được để trống.',
+            'email.email' => 'Email không đúng định dạng.',
+            'password.required' => 'Password không được để trống.'
+        ]
+    );
 
-        if (Auth::attempt([
-            'email' => $request->email,
-            'password' => $request->password,
-        ])) {
-            return redirect()->route('admin.dashboard');
-        }else{
-            return redirect()->back()->with([
-                'messageError' => 'Email or password khong dung'
-            ]);
-        };
+    if (Auth::attempt(['email' => $request->email, 'password' => $request->password])) {
+        // Redirect based on role
+        return Auth::user()->role == '1' 
+            ? redirect()->route('admin.dashboard') 
+            : redirect()->route('users.home');
     }
+    
+    return redirect()->back()->with('messageError', 'Email hoặc password không đúng.');
+}
 
     public function logout(){
         Auth::logout();

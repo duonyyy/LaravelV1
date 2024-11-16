@@ -24,5 +24,6 @@ class CheckAdminMiddleware
         return redirect()->route('login')->with([
             'messageError' => 'ban phai dang nhap truoc'
         ]);
-    }
+    } 
+    
 }

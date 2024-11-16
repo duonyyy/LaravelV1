@@ -6,7 +6,21 @@ use App\Http\Controllers\Admin\CategoryController;
 use App\Http\Controllers\Admin\ProductController;
 use App\Http\Controllers\AuthenController;
 use App\Http\Controllers\User\HomeController;
+use App\Http\Controllers\User\ClientController;
 
+
+// Default Route
+Route::get('/', function() {
+    return redirect()->route('users.home');
+});
+
+// Authentication Routes
+Route::get('login', [AuthenController::class, 'login'])->name('login');
+Route::post('login', [AuthenController::class, 'postlogin'])->name('postlogin');
+Route::get('logout', [AuthenController::class, 'logout'])->name('logout');
+
+
+// Admin Routes
 Route::group([
     'prefix' => 'admin',
     'as' => 'admin.',
@@ -15,7 +29,7 @@ Route::group([
 
     Route::get('dashboard', [AuthenController::class, 'dashboard'])->name('dashboard');
 
-     // Users Routes
+    // User Management Routes
     Route::group([
         'prefix' => 'users',
         'as' => 'users.',
@@ -25,11 +39,9 @@ Route::group([
         Route::delete('delete/{id}', [UserController::class, 'deleteUser'])->name('deleteUser');
         Route::get('detail-user', [UserController::class, 'detailUser'])->name('detailUser');
         Route::patch('update-user', [UserController::class, 'updateUser'])->name('updateUser');
-
     });
 
-
-    // Categories Routes
+    // Category Management Routes
     Route::group([
         'prefix' => 'categories',
         'as' => 'categories.',
@@ -42,8 +54,8 @@ Route::group([
         Route::patch('update-category', [CategoryController::class, 'updatePatchCategory'])->name('updatePatchCategory');
     });
 
-     // Productes Routes
-     Route::group([
+    // Product Management Routes
+    Route::group([
         'prefix' => 'products',
         'as' => 'products.',
     ], function () {
@@ -56,27 +68,24 @@ Route::group([
     });
 });
 
-Route::get('login', [AuthenController::class, 'login'])->name('login');
-Route::post('login', [AuthenController::class, 'postlogin'])->name('postlogin');
-Route::get('logout', [AuthenController::class, 'logout'])->name('logout');
 
 
-
-
-
-
-
+// User Routes
 Route::group([
-    'prefix' => 'users',     
-    'as' => 'users.',       
+    'prefix' => 'users',
+    'as' => 'users.',
 ], function () {
-
-    // Route cho trang 'home' của người dùng
     Route::get('home', [HomeController::class, 'home'])->name('home');
     Route::get('detail-product/{id}', [HomeController::class, 'detailProduct'])->name('detailProduct');
 
+    // Protected User Routes (Requires checkUser middleware)
+    Route::group([
+        'middleware' => 'checkUser',
+    ], function () {
+      
+Route::post('add-to-cart', [ClientController::class, 'addToCart'])->name('addToCart');
+Route::get('view-cart', [ClientController::class, 'viewCart'])->name('viewCart');
+    });
 });
 
-Route::get('/', function(){
-    return redirect()->route('users.home');
-});
+

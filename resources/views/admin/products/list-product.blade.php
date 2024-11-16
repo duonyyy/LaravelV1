@@ -6,9 +6,13 @@ Danh Sách Product
 @endsection
 
 @push('style')
+
 @endpush
 
-@section('content')
+@section('content')   
+<div class="h1">
+
+</div>
 <div class="d-flex">
     <div id="kt_app_content_container" class="app-container container-fluid">
         <div class="col-xl-12 mb-5 mb-xl-10">
@@ -48,6 +52,7 @@ Danh Sách Product
                                             <th class="p-0 pb-3 min-w-100px  pe-13">NAME</th>
                                             <th class="p-0 pb-3 min-w-100px  pe-13">PRICE</th>
                                             <th class="p-0 pb-3 min-w-100px  pe-13">CATEGOIES</th>
+                                            <th class="p-0 pb-3 min-w-100px  pe-13">DESCRIPTION</th>
                                             <th class="p-0 pb-3 min-w-100px  pe-13">IMAGE</th>
                                             <th class="p-0 pb-3 w-100px ">ACTIONS</th>
                                         </tr>
@@ -59,6 +64,7 @@ Danh Sách Product
                                                 <td>{{ $value->name }}</td>
                                                 <td>{{ $value->price }}</td>
                                                 <td>{{ $value->category->name }}</td>
+                                                <td>{{ $value->description }}</td>
                                                 <td>
                                                     <div class="d-flex align-items-center">
                                                         @foreach($value->images->take(3) as $image)
