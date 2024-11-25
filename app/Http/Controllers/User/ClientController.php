@@ -7,6 +7,9 @@ use App\Http\Controllers\Controller;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Http\Request;
 use Illuminate\Validation\Rules\Can;
+use Illuminate\Database\Eloquent\ModelNotFoundException;
+
+
 
 class ClientController extends Controller
 {
@@ -62,7 +65,7 @@ class ClientController extends Controller
 
     public function viewCart(){
      $cart = Cart::where('user_id', Auth::id())
-             ->with('cartDetails:cart_id,product_id,quantity')
+             ->with('cartDetails:id,cart_id,product_id,quantity')
              ->with('cartDetails.product:id,name,price')
              ->with('cartDetails.product.category:id,name')
              ->with('cartDetails.product.images:id,product_id,image_url')
@@ -72,5 +75,30 @@ class ClientController extends Controller
             'cart' => $cart
         ]) ; 
     }
+
+    public function updateCart(Request $req){
+           foreach($req->cartDetailId as $key => $cartDetailId){
+            CartDetail::find($cartDetailId)->update([
+                'quantity' => $req->quantity[$key]
+            ]);
+
+            return redirect()->back()->with([
+                'message' =>' Cap nhat thanh cong'
+            ]);
+           }
+    }
+
+    public function deleteCart($id) {
+        try {
+            $cartDetail = CartDetail::findOrFail($id); // Tìm sản phẩm theo ID
+            $cartDetail->delete(); // Xóa sản phẩm khỏi giỏ hàng
+            return redirect()->back()->with('message', 'Sản phẩm đã được xóa khỏi giỏ hàng thành công.');
+        } catch (ModelNotFoundException $e) {
+            return redirect()->back()->with('error', 'Sản phẩm không tồn tại.');
+        } catch (\Exception $e) {
+            return redirect()->back()->with('error', 'Đã xảy ra lỗi khi xóa sản phẩm.');
+        }
+    }
+    
 }
 

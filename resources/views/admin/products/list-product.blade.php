@@ -45,45 +45,47 @@ Danh Sách Product
                     <div class="tab-content">
                         <div class="tab-pane fade show active" id="kt_stats_widget_16_tab_1">
                             <div class="table-responsive">
-                                <table class="table table-row-dashed align-middle gs-0 gy-3 my-0">
-                                    <thead>
-                                        <tr class="fs-7 fw-bold text-gray-500 border-bottom-0">
-                                            <th class="p-0 pb-3 min-w-100px ">STT</th>
-                                            <th class="p-0 pb-3 min-w-100px  pe-13">NAME</th>
-                                            <th class="p-0 pb-3 min-w-100px  pe-13">PRICE</th>
-                                            <th class="p-0 pb-3 min-w-100px  pe-13">CATEGOIES</th>
-                                            <th class="p-0 pb-3 min-w-100px  pe-13">DESCRIPTION</th>
-                                            <th class="p-0 pb-3 min-w-100px  pe-13">IMAGE</th>
-                                            <th class="p-0 pb-3 w-100px ">ACTIONS</th>
+                                <table class="table table-striped table-hover table-bordered align-middle table-bordered" id="dataTables-example">
+                                    <thead class="table-light">
+                                        <tr class="text-center">
+                                            <th>STT</th>
+                                            <th>Name</th>
+                                            <th>Price</th>
+                                            <th>Categories</th>
+                                            <th>Description</th>
+                                            <th>Image</th>
+                                            <th>Actions</th>
                                         </tr>
                                     </thead>
                                     <tbody>
-                                        @foreach( $products as $key => $value)
-                                            <tr>
-                                                <td>{{ $key + 1 }}</td>
-                                                <td>{{ $value->name }}</td>
-                                                <td>{{ $value->price }}</td>
-                                                <td>{{ $value->category->name }}</td>
-                                                <td>{{ $value->description }}</td>
-                                                <td>
-                                                    <div class="d-flex align-items-center">
-                                                        @foreach($value->images->take(3) as $image)
-                                                            <img src="{{ asset($image->image_url) }}" alt="" class="img-thumbnail me-2" style="width: 50px; height: 50px; object-fit: cover;">
-                                                        @endforeach
-                                                    </div>
-                                                </td>                                                                                             
-                                                <td>
-                                                    <a href="{{route('admin.products.updateProduct', $value->id)}}" >
-                                                        <i class="fas fa-pencil-alt fs-4"></i>
-                                                    </a>
-                                                    <a href="#" data-id="{{ $value->id }},{{ $value->name }}" class="ms-3" data-bs-toggle="modal" data-bs-target="#modeDelete">
-                                                        <i class="fa-solid fa-trash text-danger fs-4"></i>
-                                                    </a>
-                                                </td>
-                                            </tr>
+                                        @foreach($products as $key => $value)
+                                        <tr>
+                                            <td class="text-center">{{ $key + 1 }}</td>
+                                            <td>{{ $value->name }}</td>
+                                            <td class="text-end">{{ number_format($value->price, 0, ',', '.') }}₫</td>
+                                            <td>{{ $value->category->name }}</td>
+                                            <td>{{ Str::limit(strip_tags($value->description), 50) }}</td>
+
+                                            <td>
+                                                <div class="d-flex justify-content-center">
+                                                    @foreach($value->images->take(3) as $image)
+                                                    <img src="{{ asset($image->image_url) }}" alt="product-image" class="rounded border me-2" style="width: 50px; height: 50px; object-fit: cover;">
+                                                    @endforeach
+                                                </div>
+                                            </td>
+                                            <td class="text-center">
+                                                <a href="{{ route('admin.products.updateProduct', $value->id) }}" class="btn btn-outline-primary btn-sm">
+                                                    <i class="fas fa-edit"></i> Edit
+                                                </a>
+                                                <button class="btn btn-outline-danger btn-sm ms-2" data-id="{{ $value->id }},{{ $value->name }}" data-bs-toggle="modal" data-bs-target="#modeDelete">
+                                                    <i class="fas fa-trash"></i> Delete
+                                                </button>
+                                            </td>
+                                        </tr>
                                         @endforeach
                                     </tbody>
                                 </table>
+                                
                             </div>
                         </div>
                     </div>

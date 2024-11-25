@@ -9,10 +9,35 @@ use App\Models\ProductImage;
 use Illuminate\Support\Facades\File;
 class ProductController extends Controller
 {
-    public function getListProducts() {
-        $products = Product::with(['images' => function($query) {
-            $query->select('product_id', 'image_url');
-        }])
+    // public function getListProducts() {
+    //     $products = Product::with(['images' => function($query) {
+    //         $query->select('product_id', 'image_url');
+    //     }])
+    //     ->leftJoin('category', 'product.category_id', '=', 'category.id')
+    //     ->select('product.id', 'product.name', 'product.price', 'product.description', 'category.name as category_name')
+    //     ->get()
+    //     ->map(function ($product) {
+    //         return [
+    //             'id' => $product->id,
+    //             'name' => $product->name,
+    //             'price' => $product->price,
+    //             'description' => $product->description,
+    //             'category_name' => $product->category_name,
+    //             'images' => $product->images->pluck('image_url'), // Array of image URLs
+    //         ];
+    //     });
+    
+    //     return response()->json([
+    //         'data' => $products,
+    //         'message' => 'success',
+    //         'status_code' => 200
+    //     ], 200);
+    // }
+    public function getListProducts()
+{
+    $products = Product::with(['images' => function ($query) {
+        $query->select('product_id', 'image_url');
+    }])
         ->leftJoin('category', 'product.category_id', '=', 'category.id')
         ->select('product.id', 'product.name', 'product.price', 'product.description', 'category.name as category_name')
         ->get()
@@ -23,16 +48,13 @@ class ProductController extends Controller
                 'price' => $product->price,
                 'description' => $product->description,
                 'category_name' => $product->category_name,
-                'images' => $product->images->pluck('image_url'), // Array of image URLs
+                'images' => $product->images->pluck('image_url')->toArray(), // Chuyển sang mảng đơn giản
             ];
-        });
+        })
+        ->toArray(); // Chuyển toàn bộ Collection thành mảng đơn giản
     
-        return response()->json([
-            'data' => $products,
-            'message' => 'success',
-            'status_code' => 200
-        ], 200);
-    }
+    return response()->json($products, 200);
+}
 
 
     public function getProduct($id) {

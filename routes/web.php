@@ -4,8 +4,14 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\Admin\UserController;
 use App\Http\Controllers\Admin\CategoryController;
 use App\Http\Controllers\Admin\ProductController;
+use App\Http\Controllers\Admin\SlidersController;
+use App\Http\Controllers\Admin\TermController;
+use App\Http\Controllers\Admin\ContactController;
+use App\Http\Controllers\Admin\AboutController;
+use App\Http\Controllers\Admin\SocialController;
 use App\Http\Controllers\AuthenController;
 use App\Http\Controllers\User\HomeController;
+use App\Http\Controllers\User\OrderController;
 use App\Http\Controllers\User\ClientController;
 
 
@@ -49,7 +55,7 @@ Route::group([
         Route::get('/', [CategoryController::class, 'listCategories'])->name('listCategories');
         Route::get('add-category', [CategoryController::class, 'addCategory'])->name('addCategory');
         Route::post('add-category', [CategoryController::class, 'addPostCategory'])->name('addPostCategory');
-        Route::delete('delete-category', [CategoryController::class, 'deleteCategory'])->name('deleteCategory');
+        Route::delete('delete-category/{idCategory}', [CategoryController::class, 'deleteCategory'])->name('deleteCategory');
         Route::get('update-category/{idCategory}', [CategoryController::class, 'updateCategory'])->name('updateCategory');
         Route::patch('update-category', [CategoryController::class, 'updatePatchCategory'])->name('updatePatchCategory');
     });
@@ -66,6 +72,49 @@ Route::group([
         Route::get('update-product/{idProduct}', [ProductController::class, 'updateProduct'])->name('updateProduct');
         Route::patch('update-product', [ProductController::class, 'updatePatchProduct'])->name('updatePatchProduct');
     });
+
+    Route::group([
+       'prefix' => 'sliders',
+       'as' => 'sliders.',
+
+    ], function(){
+        Route::get('/', [SlidersController::class, 'listSliders'])->name('listSliders');
+        Route::get('add-slider', [SlidersController::class, 'addSlider'])->name('addSlider');
+        Route::post('add-slider', [SlidersController::class, 'addPostSlider'])->name('addPostSlider');
+        Route::delete('delete-slider/{idSlider}', [SlidersController::class, 'deleteSlider'])->name('deleteSlider');
+        Route::get('update-slider/{idSlider}', [SlidersController::class, 'updateSlider'])->name('updateSlider');
+        Route::patch('update-slider', [SlidersController::class, 'updatePatchSlider'])->name('updatePatchSlider');
+    });
+
+    Route::group([
+        'prefix' => 'socials',
+        'as' => 'socials.',
+ 
+     ], function(){
+         Route::get('/', [SocialController::class, 'listSocial'])->name('listSocial');
+         Route::get('add-social', [SocialController::class, 'addSocial'])->name('addSocial');
+         Route::post('add-social', [SocialController::class, 'addPostSocial'])->name('addPostSocial');
+         Route::delete('delete-social/{idSocial}', [SocialController::class, 'deleteSocial'])->name('deleteSocial');
+         Route::get('update-social/{idSocial}', [SocialController::class, 'updateSocial'])->name('updateSocial');
+         Route::patch('update-social/{idSocial}', [SocialController::class, 'updatePatchSocial'])->name('updatePatchSocial');
+     });
+
+    Route::group([
+        'prefix' => 'managers', 
+        'as' => 'managers.',    
+    ], function() {
+        // Term
+        Route::get('term', [TermController::class, 'getTerm'])->name('getTerm');
+        Route::patch('store-or-update-term', [TermController::class, 'storeOrUpdateTerm'])->name('storeOrUpdateTerm');
+        // Contact
+        Route::get('contact', [ContactController::class, 'getContact'])->name('getContact');
+        Route::patch('store-or-update-contact', [ContactController::class, 'storeOrUpdateContact'])->name('storeOrUpdateContact'); 
+        // About
+        Route::get('about', [AboutController::class, 'getAbout'])->name('getAbout');
+        Route::patch('store-or-update-about', [AboutController::class, 'storeOrUpdateAbout'])->name('storeOrUpdateAbout'); 
+
+    });
+    
 });
 
 
@@ -81,11 +130,18 @@ Route::group([
     // Protected User Routes (Requires checkUser middleware)
     Route::group([
         'middleware' => 'checkUser',
-    ], function () {
-      
-Route::post('add-to-cart', [ClientController::class, 'addToCart'])->name('addToCart');
-Route::get('view-cart', [ClientController::class, 'viewCart'])->name('viewCart');
+    ], function () {    
+        Route::post('add-to-cart', [ClientController::class, 'addToCart'])->name('addToCart');
+        Route::get('view-cart', [ClientController::class, 'viewCart'])->name('viewCart');
+        Route::patch('update-cart', [ClientController::class, 'updateCart'])->name('updateCart');
+        Route::delete('delete-cart/{id}', [ClientController::class, 'deleteCart'])->name('deleteCart');
+
+
+        Route::get('checkout', [OrderController::class, 'showCheckout'])->name('showCheckout');
+        Route::post('process-checkout', [OrderController::class, 'processCheckout'])->name('processCheckout');
+
     });
+      
 });
 
 

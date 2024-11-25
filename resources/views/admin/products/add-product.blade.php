@@ -75,14 +75,16 @@
             @enderror
         </div>
 
-        <!-- Product Description -->
-        <div class="mb-3">
-            <label for="productDescription" class="form-label">Mô Tả Sản Phẩm</label>
-            <textarea id="productDescription" name="description" class="form-control @error('description') is-invalid @enderror" rows="3" aria-describedby="productDescriptionError"></textarea>
-            @error('description')
-                <div id="productDescriptionError" class="text-danger">{{ $message }}</div>
-            @enderror
-        </div>
+       <!-- Product Description -->
+<div class="mb-3">
+    <label for="productDescription" class="form-label">Mô Tả Sản Phẩm</label>
+    <textarea name="description" class="form-control" id="summernote"></textarea>
+    
+    <!-- Hiển thị lỗi nếu có -->
+    @error('description')
+        <div class="text-danger mt-2">{{ $message }}</div>
+    @enderror
+</div>
 
         <!-- Submit Button -->
         <div class="mb-3">

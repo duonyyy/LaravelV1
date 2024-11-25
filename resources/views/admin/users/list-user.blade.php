@@ -42,7 +42,7 @@ Danh Sách User
                     <div class="tab-content">
                         <div class="tab-pane fade show active" id="kt_stats_widget_16_tab_1">
                             <div class="table-responsive">
-                                <table class="table table-row-dashed align-middle gs-0 gy-3 my-0">
+                                <table class="table table-striped table-hover table-bordered align-middle table-bordered" id="dataTables-example">
                                     <thead>
                                         <tr class="fs-7 fw-bold text-gray-500 border-bottom-0">
                                             <th class="p-0 pb-3 min-w-100px ">STT</th>

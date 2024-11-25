@@ -22,3 +22,7 @@
   .light-sidebar .logo2 {
     color: var(--bs-app-sidebar-light-menu-link-color);
   }
+
+  a {
+    text-decoration: none;
+}
