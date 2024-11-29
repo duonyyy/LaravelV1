@@ -37,7 +37,7 @@ class OrderController extends Controller
         $shippingFee = 30000; // Giả sử phí vận chuyển cố định
     
         // Trả về view 'checkout' với dữ liệu
-        return view('user.checkout', compact('cart', 'subtotal', 'shippingFee'));
+        return view('user.pages.checkout', compact('cart', 'subtotal', 'shippingFee'));
     }
     
 

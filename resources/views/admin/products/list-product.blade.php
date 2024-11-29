@@ -61,7 +61,7 @@ Danh Sách Product
                                         @foreach($products as $key => $value)
                                         <tr>
                                             <td class="text-center">{{ $key + 1 }}</td>
-                                            <td>{{ $value->name }}</td>
+                                            <td>{{ Str::limit(strip_tags($value->name),30) }}</td>
                                             <td class="text-end">{{ number_format($value->price, 0, ',', '.') }}₫</td>
                                             <td>{{ $value->category->name }}</td>
                                             <td>{{ Str::limit(strip_tags($value->description), 50) }}</td>

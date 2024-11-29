@@ -106,6 +106,38 @@ data-kt-drawer-toggle="#kt_app_sidebar_mobile_toggle">
                                 <span class="path3"></span>
                             </i>
                         </span>
+                        <span class="menu-title">Quản lý Slider </span>
+                        <span class="menu-arrow"></span>
+                    </span>
+                    <div class="menu-sub menu-sub-accordion">
+                        <div class="menu-item">
+                            <a class="menu-link"  href="{{ route('admin.sliders.listSliders')}}">
+                                <span class="menu-bullet">
+                                    <span class="bullet bullet-dot"></span>
+                                </span>
+                                <span class="menu-title">Danh sách  Slider</span>
+                            </a>
+                        </div>
+                        <div class="menu-item">
+                            <a class="menu-link"  href="{{ route('admin.sliders.addSlider')}}">
+                                <span class="menu-bullet">
+                                    <span class="bullet bullet-dot"></span>
+                                </span>
+                                <span class="menu-title">Thêm  Slider</span>
+                            </a>
+                        </div>
+                       
+                    </div>
+                </div>
+                <div data-kt-menu-trigger="click" class="menu-item menu-accordion">
+                    <span class="menu-link">
+                        <span class="menu-icon">
+                            <i class="ki-duotone ki-address-book fs-2">
+                                <span class="path1"></span>
+                                <span class="path2"></span>
+                                <span class="path3"></span>
+                            </i>
+                        </span>
                         <span class="menu-title">Quản lý sản phẩm </span>
                         <span class="menu-arrow"></span>
                     </span>
@@ -128,7 +160,40 @@ data-kt-drawer-toggle="#kt_app_sidebar_mobile_toggle">
                         </div>
                        
                     </div>
+                </div>  
+                <div data-kt-menu-trigger="click" class="menu-item menu-accordion">
+                    <span class="menu-link">
+                        <span class="menu-icon">
+                            <i class="ki-duotone ki-address-book fs-2">
+                                <span class="path1"></span>
+                                <span class="path2"></span>
+                                <span class="path3"></span>
+                            </i>
+                        </span>
+                        <span class="menu-title">Quản lý Social </span>
+                        <span class="menu-arrow"></span>
+                    </span>
+                    <div class="menu-sub menu-sub-accordion">
+                        <div class="menu-item">
+                            <a class="menu-link"  href="{{ route('admin.socials.listSocial')}}">
+                                <span class="menu-bullet">
+                                    <span class="bullet bullet-dot"></span>
+                                </span>
+                                <span class="menu-title">Danh sách Social</span>
+                            </a>
+                        </div>
+                        <div class="menu-item">
+                            <a class="menu-link"  href="{{ route('admin.socials.addSocial')}}">
+                                <span class="menu-bullet">
+                                    <span class="bullet bullet-dot"></span>
+                                </span>
+                                <span class="menu-title">Thêm sản phẩm</span>
+                            </a>
+                        </div>
+                       
+                    </div>
                 </div> 
+              
                 <div data-kt-menu-trigger="click" class="menu-item menu-accordion">
                     <span class="menu-link">
                         <span class="menu-icon">

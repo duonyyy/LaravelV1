@@ -1,99 +1,144 @@
-<div class="mb-0">
-    <div class="landing-curve landing-dark-color">
-        <svg viewBox="15 -1 1470 48" fill="none" xmlns="http://www.w3.org/2000/svg">
-            <path
-                d="M1 48C4.93573 47.6644 8.85984 47.3311 12.7725 47H1489.16C1493.1 47.3311 1497.04 47.6644 1501 48V47H1489.16C914.668 -1.34764 587.282 -1.61174 12.7725 47H1V48Z"
-                fill="currentColor"></path>
-        </svg>
-    </div>
-    <div class="landing-dark-bg pt-20">
+<footer class="footer">
+    <!-- Start Footer Top -->
+    <div class="footer-top">
         <div class="container">
-            <div class="row py-10 py-lg-20">
-                <div class="col-lg-6 pe-lg-16 mb-10 mb-lg-0">
-                    <div class="rounded landing-dark-border p-9 mb-10">
-                        <h2 class="text-white">Would you need a Custom License?</h2>
-                        <span class="fw-normal fs-4 text-gray-700">Email us to
-                            <a href="https://keenthemes.com/support"
-                                class="text-white opacity-50 text-hover-primary">support@keenthemes.com</a></span>
-                    </div>
-                    <div class="rounded landing-dark-border p-9">
-                        <h2 class="text-white">How About a Custom Project?</h2>
-                        <span class="fw-normal fs-4 text-gray-700">Use Our Custom Development Service.
-                            <a href="pages/user-profile/overview.html"
-                                class="text-white opacity-50 text-hover-primary">Click to Get a Quote</a></span>
-                    </div>
-                </div>
-                <div class="col-lg-6 ps-lg-16">
-                    <div class="d-flex justify-content-center">
-                        <div class="d-flex fw-semibold flex-column me-20">
-                            <h4 class="fw-bold text-gray-500 mb-6">More for Metronic</h4>
-                            <a href="https://keenthemes.com/faqs"
-                                class="text-white opacity-50 text-hover-primary fs-5 mb-6">FAQ</a>
-                            <a href="https://preview.keenthemes.com/html/metronic/docs"
-                                class="text-white opacity-50 text-hover-primary fs-5 mb-6">Documentaions</a>
-                            <a href="https://www.youtube.com/c/KeenThemesTuts/videos"
-                                class="text-white opacity-50 text-hover-primary fs-5 mb-6">Video Tuts</a>
-                            <a href="https://preview.keenthemes.com/html/metronic/docs/getting-started/changelog"
-                                class="text-white opacity-50 text-hover-primary fs-5 mb-6">Changelog</a>
-                            <a href="https://devs.keenthemes.com/"
-                                class="text-white opacity-50 text-hover-primary fs-5 mb-6">Support Forum</a>
-                            <a href="https://keenthemes.com/blog"
-                                class="text-white opacity-50 text-hover-primary fs-5">Blog</a>
+            <div class="inner-content">
+                <div class="row">
+                    <div class="col-lg-3 col-md-4 col-12">
+                        <div class="footer-logo">
+                            <a href="index.html">
+                                <img src="{{asset('/')}}images/logo/white-logo.svg" alt="#">
+                            </a>
                         </div>
-                        <div class="d-flex fw-semibold flex-column ms-lg-20">
-                            <h4 class="fw-bold text-gray-500 mb-6">Stay Connected</h4>
-                            <a href="https://www.facebook.com/keenthemes" class="mb-6">
-                                <img src="assets/media/svg/brand-logos/facebook-4.svg" class="h-20px me-2"
-                                    alt="" />
-                                <span class="text-white opacity-50 text-hover-primary fs-5 mb-6">Facebook</span>
-                            </a>
-                            <a href="https://github.com/KeenthemesHub" class="mb-6">
-                                <img src="assets/media/svg/brand-logos/github.svg" class="h-20px me-2" alt="" />
-                                <span class="text-white opacity-50 text-hover-primary fs-5 mb-6">Github</span>
-                            </a>
-                            <a href="https://twitter.com/keenthemes" class="mb-6">
-                                <img src="assets/media/svg/brand-logos/twitter.svg" class="h-20px me-2"
-                                    alt="" />
-                                <span class="text-white opacity-50 text-hover-primary fs-5 mb-6">Twitter</span>
-                            </a>
-                            <a href="https://dribbble.com/keenthemes" class="mb-6">
-                                <img src="assets/media/svg/brand-logos/dribbble-icon-1.svg" class="h-20px me-2"
-                                    alt="" />
-                                <span class="text-white opacity-50 text-hover-primary fs-5 mb-6">Dribbble</span>
-                            </a>
-                            <a href="https://www.instagram.com/keenthemes" class="mb-6">
-                                <img src="assets/media/svg/brand-logos/instagram-2-1.svg" class="h-20px me-2"
-                                    alt="" />
-                                <span
-                                    class="text-white opacity-50 text-hover-primary fs-5 mb-6">Instagram</span>
-                            </a>
+                    </div>
+                    <div class="col-lg-9 col-md-8 col-12">
+                        <div class="footer-newsletter">
+                            <h4 class="title">
+                                Subscribe to our Newsletter
+                                <span>Get all the latest information, Sales and Offers.</span>
+                            </h4>
+                            <div class="newsletter-form-head">
+                                <form action="#" method="get" target="_blank" class="newsletter-form">
+                                    <input name="EMAIL" placeholder="Email address here..." type="email">
+                                    <div class="button">
+                                        <button class="btn">Subscribe<span class="dir-part"></span></button>
+                                    </div>
+                                </form>
+                            </div>
                         </div>
                     </div>
                 </div>
             </div>
         </div>
-        <div class="landing-dark-separator"></div>
+    </div>
+    <!-- End Footer Top -->
+    <!-- Start Footer Middle -->
+    <div class="footer-middle">
         <div class="container">
-            <div class="d-flex flex-column flex-md-row flex-stack py-7 py-lg-10">
-                <div class="d-flex align-items-center order-2 order-md-1">
-                    <a href="landing.html">
-                        <img alt="Logo" src="assets/media/logos/landing.svg" class="h-15px h-md-20px" />
-                    </a>
-                    <span class="mx-5 fs-6 fw-semibold text-gray-600 pt-1" href="https://keenthemes.com">&copy;
-                        2024 Keenthemes Inc.</span>
+            <div class="bottom-inner">
+                <div class="row">
+                    <div class="col-lg-3 col-md-6 col-12">
+                        <!-- Single Widget -->
+                        <div class="single-footer f-contact">
+                            <h3>Get In Touch With Us</h3>
+                            <p class="phone">Phone: +1 (900) 33 169 7720</p>
+                            <ul>
+                                <li><span>Monday-Friday: </span> 9.00 am - 8.00 pm</li>
+                                <li><span>Saturday: </span> 10.00 am - 6.00 pm</li>
+                            </ul>
+                            <p class="mail">
+                                <a href="mailto:support@shopgrids.com">support@shopgrids.com</a>
+                            </p>
+                        </div>
+                        <!-- End Single Widget -->
+                    </div>
+                    <div class="col-lg-3 col-md-6 col-12">
+                        <!-- Single Widget -->
+                        <div class="single-footer our-app">
+                            <h3>Our Mobile App</h3>
+                            <ul class="app-btn">
+                                <li>
+                                    <a href="javascript:void(0)">
+                                        <i class="lni lni-apple"></i>
+                                        <span class="small-title">Download on the</span>
+                                        <span class="big-title">App Store</span>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="javascript:void(0)">
+                                        <i class="lni lni-play-store"></i>
+                                        <span class="small-title">Download on the</span>
+                                        <span class="big-title">Google Play</span>
+                                    </a>
+                                </li>
+                            </ul>
+                        </div>
+                        <!-- End Single Widget -->
+                    </div>
+                    <div class="col-lg-3 col-md-6 col-12">
+                        <!-- Single Widget -->
+                        <div class="single-footer f-link">
+                            <h3>Information</h3>
+                            <ul>
+                                <li><a href="javascript:void(0)">About Us</a></li>
+                                <li><a href="javascript:void(0)">Contact Us</a></li>
+                                <li><a href="javascript:void(0)">Downloads</a></li>
+                                <li><a href="javascript:void(0)">Sitemap</a></li>
+                                <li><a href="javascript:void(0)">FAQs Page</a></li>
+                            </ul>
+                        </div>
+                        <!-- End Single Widget -->
+                    </div>
+                    <div class="col-lg-3 col-md-6 col-12">
+                        <!-- Single Widget -->
+                        <div class="single-footer f-link">
+                            <h3>Shop Departments</h3>
+                            <ul>
+                                <li><a href="javascript:void(0)">Computers & Accessories</a></li>
+                                <li><a href="javascript:void(0)">Smartphones & Tablets</a></li>
+                                <li><a href="javascript:void(0)">TV, Video & Audio</a></li>
+                                <li><a href="javascript:void(0)">Cameras, Photo & Video</a></li>
+                                <li><a href="javascript:void(0)">Headphones</a></li>
+                            </ul>
+                        </div>
+                        <!-- End Single Widget -->
+                    </div>
                 </div>
-                <ul class="menu menu-gray-600 menu-hover-primary fw-semibold fs-6 fs-md-5 order-1 mb-5 mb-md-0">
-                    <li class="menu-item">
-                        <a href="https://keenthemes.com" target="_blank" class="menu-link px-2">About</a>
-                    </li>
-                    <li class="menu-item mx-5">
-                        <a href="https://devs.keenthemes.com" target="_blank" class="menu-link px-2">Support</a>
-                    </li>
-                    <li class="menu-item">
-                        <a href="" target="_blank" class="menu-link px-2">Purchase</a>
-                    </li>
-                </ul>
             </div>
         </div>
     </div>
-</div>
+    <!-- End Footer Middle -->
+    <!-- Start Footer Bottom -->
+    <div class="footer-bottom">
+        <div class="container">
+            <div class="inner-content">
+                <div class="row align-items-center">
+                    <div class="col-lg-4 col-12">
+                        <div class="payment-gateway">
+                            <span>We Accept:</span>
+                            <img src="{{asset('/')}}images/footer/credit-cards-footer.png" alt="#">
+                        </div>
+                    </div>
+                    <div class="col-lg-4 col-12">
+                        <div class="copyright">
+                            <p>Designed and Developed by<a href="https://graygrids.com/" rel="nofollow"
+                                    target="_blank">GrayGrids</a></p>
+                        </div>
+                    </div>
+                    <div class="col-lg-4 col-12">
+                        <ul class="socila">
+                            <li>
+                                <span>Follow Us On:</span>
+                            </li>
+                            <li><a href="javascript:void(0)"><i class="lni lni-facebook-filled"></i></a></li>
+                            <li><a href="javascript:void(0)"><i class="lni lni-twitter-original"></i></a></li>
+                            <li><a href="javascript:void(0)"><i class="lni lni-instagram"></i></a></li>
+                            <li><a href="javascript:void(0)"><i class="lni lni-google"></i></a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- End Footer Bottom -->
+</footer>

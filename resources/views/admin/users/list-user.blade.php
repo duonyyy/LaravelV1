@@ -46,6 +46,7 @@ Danh Sách User
                                     <thead>
                                         <tr class="fs-7 fw-bold text-gray-500 border-bottom-0">
                                             <th class="p-0 pb-3 min-w-100px ">STT</th>
+                                            <th class="p-0 pb-3 min-w-100px ">AVT</th>
                                             <th class="p-0 pb-3 min-w-100px  pe-13">NAME</th>
                                             <th class="p-0 pb-3 w-150px  pe-7">EMAIL</th>
                                             <th class="p-0 pb-3 w-150px  pe-7">ROLE</th>
@@ -56,6 +57,38 @@ Danh Sách User
                                         @foreach($listuser as $key => $value)
                                             <tr>
                                                 <td>{{ $key + 1 }}</td>
+                                                <td>
+                                                    <div class="d-flex justify-content-start">
+                                                        <!-- Ảnh nhỏ -->
+                                                        <img 
+                                                            src="{{ asset($value->image) }}" 
+                                                            alt="product-image" 
+                                                            class="rounded border me-2" 
+                                                            style="width: 80px; height: 80px; object-fit: cover; cursor: pointer;" 
+                                                            data-bs-toggle="modal" 
+                                                            data-bs-target="#imageModal{{ $value->id }}">
+                                                    </div>
+                                                
+                                                    <!-- Modal hiển thị ảnh lớn -->
+                                                    <div class="modal fade" id="imageModal{{ $value->id }}" tabindex="-1" aria-labelledby="imageModalLabel{{ $value->id }}" aria-hidden="true">
+                                                        <div class="modal-dialog modal-dialog-centered">
+                                                            <div class="modal-content">
+                                                                <div class="modal-header">
+                                                                    <h5 class="modal-title" id="imageModalLabel{{ $value->id }}">Hình ảnh sản phẩm</h5>
+                                                                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                                                                </div>
+                                                                <div class="modal-body text-center">
+                                                                    <!-- Ảnh lớn -->
+                                                                    <img 
+                                                                        src="{{ asset($value->image) }}" 
+                                                                        alt="product-image" 
+                                                                        class="img-fluid rounded border">
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </td>
+                                               
                                                 <td>{{ $value->name }}</td>
                                                 <td>{{ $value->email }}</td>
                                                 <td>
@@ -94,7 +127,7 @@ Danh Sách User
           <h5 class="modal-title" id="addUsersLabel">Thêm người dùng</h5>
           <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
         </div>
-        <form action="{{ route('admin.users.addUsers') }}" method="POST">
+        <form action="{{ route('admin.users.addUsers') }}" method="POST" enctype="multipart/form-data">
             @csrf
             <div class="modal-body">
               <div class="mt-3">
@@ -104,6 +137,13 @@ Danh Sách User
                     <div class="text-danger">{{ $message }}</div>
                 @enderror
               </div>
+              <div class="mb-3">
+                <label for="image" class="form-label">Hình ảnh </label>
+                <input type="file" id="image" name="image" class="form-control @error('image') is-invalid @enderror" multiple required>
+                @error('image')
+                    <div class="text-danger">{{ $message }}</div>
+                @enderror
+            </div>
               <div class="mt-3">
                 <label for="email">Email</label>
                 <input type="text" id="email" name="email" class="form-control" >
